@@ -30,9 +30,18 @@ button{
     font-weight: 500;
 }
 
-.songlist{
+
+.content{
     border: 2px #fff solid;
-    padding: 5px 10px;
+}
+
+li{
+    font-size: 1.5rem;
+}
+li span{
+    background-color: #7213ca;
+    border-radius: 2px;
+    padding: 2px;
 }
 @media (min-width: 768px) {
     .col-md-1 {

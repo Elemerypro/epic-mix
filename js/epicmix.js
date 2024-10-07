@@ -1,57 +1,36 @@
-let Input=document.querySelector('.input');
-let AddButtton=document.querySelector('addbutton');
-let AddLsist=document.querySelector('addlist');
 
-let items=[];
-
-if (localStorage.getItem('items')==null){
-    items=[]
-}else{
-    items = JSON.parse(localStorage.getItem('items'))
-    display()
-
-}
-function addList(){
-    let item={
-        Input:Input.value
-    }
-
-    items.push(item)
-    localStorage.setItem('items', JSON.stringify(items))
-
-    console.log(items);
-    clearInput()
-    display()
-}
-
-function clearInput(){
-        Input.value=null
-
-}
+let content = document.querySelector('content')
 
 
-function display(){
+let songslist=[
+    "Time to Pretend",
+    "O-o-oh Child",
+    "Wish You Were Here",
+    "Heroes",
+    "I Put a Spell on You",
+    "Call Me",
+    "Paper Planes",
+    "Jolene",
+    "You Don't Own Me",
+    "Fast Car",
+    "Run the World (Girls)",
+    "Superstition"
+]
+function showSong(){
     let cartona=''
-    for(let i=0;i<items.length;i++){
+    for(let i=1;i<songslist.length;i++){
         cartona+=`
-            <div class="col-12 mx-auto my-1 d-flex justify-content-between w-100 items" >
-                    <ul class="addedlist ">
-                        <li class="text-white fw-bold">Item:${items[i].Input}</li>
-
-                    </ul>
-                    <button class="removebutton" onclick="removeItem(${i})"><i class="fa-solid fa-x"></i></button>
-                </div>
+            <div class="songlista  col-12">
+                 <ul class="lista ">
+                 <li class="text-white text-bold "><span>#${i}</span> ${songslist[i]}</li>
+             
+                 </ul>
+            </div>
+               
+           
         `
     }
-
-    document.querySelector('.list').innerHTML=cartona;
-}
-
-function removeItem(deletedindex){
-    items.splice(deletedindex,1);
-    display()
-    console.log(deletedindex);
-    localStorage.setItem('items', JSON.stringify(items))
-
     
+    document.querySelector('.content').innerHTML=cartona
+    document.querySelector('.content').classList.remove('d-none')
 }
