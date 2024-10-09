@@ -20,9 +20,10 @@ function showSong(){
     let cartona=''
     for(let i=1;i<songslist.length;i++){
         cartona+=`
-            <div class="songlista  col-12">
-                 <ul class="lista ">
-                 <li class="text-white text-bold "><span>#${i}</span> ${songslist[i]}</li>
+            <div class="songlista ">
+                 <ul class="lista row">
+                 <li class="text-white fw-bolder col-6"><span>#${i}</span> ${songslist[i]}</li>
+                 
              
                  </ul>
             </div>
@@ -33,4 +34,5 @@ function showSong(){
     
     document.querySelector('.content').innerHTML=cartona
     document.querySelector('.content').classList.remove('d-none')
+    document.querySelector('button').classList.add('d-none')
 }
